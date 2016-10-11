@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Template • TodoMVC</title>
+		<title>pzli-todo</title>
 		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
 		<!-- CSS overrides - remove if you don't need it -->
 		<link rel="stylesheet" href="css/app.css">
@@ -19,7 +19,7 @@
 				<h1>todos</h1>
 				<!--input外包一个form,去掉action,用ng-submit完成回车时调用函数add()-->
 				<form ng-submit="add()">
-					<input class="new-todo" placeholder="What needs to be done?" autofocus ng-model="text">
+					<input class="new-todo" placeholder="有什么应该做的事?" autofocus ng-model="text">
 				</form>
 			</header>
 			<!-- This section should be hidden by default and shown when there are todos -->
@@ -49,17 +49,17 @@
 				<!-- Remove this if you don't implement routing -->
 				<ul class="filters">
 					<li>
-						<a ng-class="{selected:$location.path()=='/'}" href="#/">All</a>
+						<a ng-class="{selected:$location.path()=='/'}" href="#/">全部</a>
 					</li>
 					<li>
-						<a ng-class="{selected:$location.path()=='/active'}" href="#/active">Active</a>
+						<a ng-class="{selected:$location.path()=='/active'}" href="#/active">未完成</a>
 					</li>
 					<li>
-						<a ng-class="{selected:$location.path()=='/completed'}" href="#/completed">Completed</a>
+						<a ng-class="{selected:$location.path()=='/completed'}" href="#/completed">已完成</a>
 					</li>
 				</ul>
 				<!-- Hidden if no completed items are left ↓ -->
-				<button class="clear-completed" ng-click="clearAll()" ng-show="exist()">Clear completed</button>
+				<button class="clear-completed" ng-click="clearAll()" ng-show="exist()">清除全部已完成</button>
 			</footer>
 		</section>
 		<footer class="info">
